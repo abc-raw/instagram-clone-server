@@ -25,7 +25,7 @@ app.use(express.json({ limit: "10mb" }));
 
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
-if (process.env.NODE_ENV === "devlopment") {
+if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
@@ -47,7 +47,7 @@ app.use((req, res) => {
       error: "API endpoint not found",
     });
   }
-  
+
   res.sendFile(path.join(process.cwd(), "../public/index.html"));
 });
 
